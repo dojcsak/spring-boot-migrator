@@ -85,7 +85,9 @@ public class MigrateStatelessEjbRecipeTest {
             assertThat(removeDependenciesAction.getDependenciesRegex()).containsExactlyInAnyOrder(
                     "javax\\:javaee-api.*",
                     "javax\\.ejb\\:javax\\.ejb-api\\:.*",
-                    "org\\.jboss\\.spec\\.javax\\.ejb\\:jboss-ejb-api_3.*");
+                    "org\\.jboss\\.spec\\.javax\\.ejb\\:jboss-ejb-api_3.*",
+                    "com\\.oracle\\.weblogic\\:javax\\.javaee-api:.*"
+                    );
 
             AddDependencies addDependencies = getAction(recipe, AddDependencies.class);
             assertThat(addDependencies.getDependencies()).containsExactly(Dependency.builder().groupId("org.springframework.boot").artifactId("spring-boot-starter-data-jpa").version("managed").build());
