@@ -24,12 +24,11 @@ The application to be migrated must meet these requirements:
 * Must ba a Maven project
 * Must follow Maven dir layout
 * Should have Git (be in a repo)
-* No Maven reactor support (only one pom.xml!)
 * Recent build with `mvn clean package` and target dir still exists
 
 Your System must meet these requirements:
 
-* Java version 11+
+* Java version 17
 
 
 == Getting started

@@ -37,8 +37,8 @@ ____
 
 == Documentation
 
-- https://github.com/spring-projects-experimental/spring-boot-migrator/blob/main/docs/reference/user-documentation.adoc[User documentation]
-- https://github.com/spring-projects-experimental/spring-boot-migrator/blob/main/docs/reference/developer-documentation.adoc[Developer documentation]
+- https://github.com/dojcsak/spring-boot-migrator/blob/main/docs/reference/user-documentation.adoc[User documentation]
+- https://github.com/dojcsak/spring-boot-migrator/blob/main/docs/reference/developer-documentation.adoc[Developer documentation]
 
 
 == Spring Boot 3.0 Upgrade - Interactive Web UI
@@ -53,7 +53,7 @@ endif::[]
 === Try the Spring Boot Upgrade Tool
 NOTE: **Use JDK 17**
 
-. Download the https://github.com/spring-projects-experimental/spring-boot-migrator/releases/latest/download/spring-boot-upgrade.jar[spring-boot-upgrade.jar]
+. Download the https://github.com/dojcsak/spring-boot-migrator/releases/latest/download/spring-boot-upgrade.jar[spring-boot-upgrade.jar]
 . Run `java -jar --add-opens java.base/sun.nio.ch=ALL-UNNAMED --add-opens java.base/java.io=ALL-UNNAMED spring-boot-upgrade.jar <path-to-application>`
 
 If any of your applications is on 2.7 and uses Maven (Gradle is currently not supported), we'd be happy if you
