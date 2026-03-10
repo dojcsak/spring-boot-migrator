@@ -1,5 +1,5 @@
 - name: migrate-tx-to-spring-boot
-  description: Migration of @TransactionAttribute to @Transactionsl
+  description: Migration of @TransactionAttribute to @Transactional
   order: 50
   condition:
     type: org.springframework.sbm.java.migration.conditions.HasImportStartingWith
