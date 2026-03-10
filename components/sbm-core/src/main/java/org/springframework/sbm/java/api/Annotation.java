@@ -32,4 +32,6 @@ public interface Annotation {
     boolean hasAttribute(String timeout);
 
     void setAttribute(String attribute, Object value, Class valueType);
+
+    void removeAttribute(String attribute);
 }

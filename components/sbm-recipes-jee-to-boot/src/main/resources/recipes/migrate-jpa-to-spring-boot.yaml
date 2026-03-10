@@ -99,7 +99,7 @@
       pattern: '/**/persistence.xml'
 
     - type: org.springframework.sbm.jee.jpa.actions.RenameUnitNameOfPersistenceContextAnnotationsToDefault
-      description: Set 'unitName' attribute from @PersistenceContext annotations to 'default' when different
+      description: Remove unitName attribute from @PersistenceContext annotations to use the default persistence unit
       condition:
         type: org.springframework.sbm.java.migration.conditions.HasMemberAnnotation
         annotation: javax.persistence.PersistenceContext
