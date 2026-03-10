@@ -25,3 +25,9 @@ jobs:
 
       - name: Maven Build
         run: ./mvnw --batch-mode clean package
+
+      - name: Upload JAR
+        uses: actions/upload-artifact@v4
+        with:
+          name: spring-boot-migrator
+          path: applications/spring-shell/target/spring-boot-migrator.jar
