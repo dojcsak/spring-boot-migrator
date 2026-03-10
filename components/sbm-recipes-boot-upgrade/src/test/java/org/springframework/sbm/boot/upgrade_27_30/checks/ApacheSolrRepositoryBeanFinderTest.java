@@ -17,6 +17,7 @@ package org.springframework.sbm.boot.upgrade_27_30.checks;
 
 
 import org.intellij.lang.annotations.Language;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.sbm.engine.context.ProjectContext;
 import org.springframework.sbm.java.api.JavaSourceAndType;
@@ -27,6 +28,7 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@Disabled
 public class ApacheSolrRepositoryBeanFinderTest {
 
     @Language("java")

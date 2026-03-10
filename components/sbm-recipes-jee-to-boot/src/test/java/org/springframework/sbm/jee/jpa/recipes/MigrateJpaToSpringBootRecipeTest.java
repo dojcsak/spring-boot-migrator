@@ -52,6 +52,7 @@ public class MigrateJpaToSpringBootRecipeTest {
                     AddDependencies.class,
                     AddDependencies.class,
                     RemoveDependenciesMatchingRegex.class,
+                    RemoveDependenciesMatchingRegex.class,
                     AddTypeAnnotationToTypeAnnotatedWith.class,
                     MigrateEclipseLinkToSpringBoot.class,
                     DeleteFileMatchingPattern.class,

@@ -49,7 +49,7 @@ public class RenameUnitNameOfPersistenceContextAnnotationsToDefault extends Abst
                     .map(m -> m.getAnnotation(PERSISTENCE_CONTEXT))
                     .findFirst()
                     .get()
-                    .setAttribute("unitName", "default", String.class);
+                    .removeAttribute("unitName");
                 });
     }
 }

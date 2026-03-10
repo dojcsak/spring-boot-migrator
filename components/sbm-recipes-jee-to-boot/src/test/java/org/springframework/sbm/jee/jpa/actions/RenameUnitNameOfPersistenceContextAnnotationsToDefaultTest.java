@@ -50,7 +50,7 @@ class RenameUnitNameOfPersistenceContextAnnotationsToDefaultTest {
                 import javax.persistence.PersistenceContext;
                 import javax.persistence.EntityManager;
                 public class Foo {
-                    @PersistenceContext(unitName = "default")
+                    @PersistenceContext
                     private EntityManager entityManager;
                 }
                 """;

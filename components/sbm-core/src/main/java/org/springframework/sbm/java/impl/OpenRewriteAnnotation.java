@@ -84,6 +84,11 @@ public class OpenRewriteAnnotation implements Annotation {
     }
 
     @Override
+    public void removeAttribute(String attribute) {
+        refactoring.refactor(new RemoveAnnotationAttributeRecipe(getFullyQualifiedName(), attribute));
+    }
+
+    @Override
     public String toString() {
         return "OpenRewriteAnnotation(" + wrapped.print() + ")";
     }

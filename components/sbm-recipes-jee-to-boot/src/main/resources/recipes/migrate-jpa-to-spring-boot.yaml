@@ -68,6 +68,15 @@
         This action will delete explicit 'hibernate' and related dependencies from a build file
         as they are transitively managed by 'spring-boot-starter-data-jpa' dependency.
 
+    - type: org.springframework.sbm.build.migration.actions.RemoveDependenciesMatchingRegex
+      condition:
+        type: org.springframework.sbm.common.migration.conditions.TrueCondition
+      dependenciesRegex:
+        - com\.oracle\.weblogic\:com\.oracle\.weblogic\.persistence:.*
+      description: Delete WebLogic related dependency
+      detailedDescription: |-
+        This action will delete com.oracle.weblogic.persistence dependency from a build file.
+
     - type: org.springframework.sbm.java.migration.actions.AddTypeAnnotationToTypeAnnotatedWith
       condition:
         type: org.springframework.sbm.jee.ejb.conditions.NoTransactionalAnnotationPresentOnTypeAnnotatedWith
@@ -90,7 +99,7 @@
       pattern: '/**/persistence.xml'
 
     - type: org.springframework.sbm.jee.jpa.actions.RenameUnitNameOfPersistenceContextAnnotationsToDefault
-      description: Set 'unitName' attribute from @PersistenceContext annotations to 'default' when different
+      description: Remove unitName attribute from @PersistenceContext annotations to use the default persistence unit
       condition:
         type: org.springframework.sbm.java.migration.conditions.HasMemberAnnotation
         annotation: javax.persistence.PersistenceContext
