@@ -79,9 +79,14 @@ public class MigrateJeeTransactionsToSpringBootAction extends AbstractAction {
                 case "javax.ejb.TransactionAttribute":
                     String assignment = annotation.getAttribute("value").printAssignment();
                     String newAssignment = mapAssignment(assignment);
-                    type.addAnnotation("@Transactional(propagation = Propagation." + newAssignment + ")",
-                            "org.springframework.transaction.annotation.Transactional",
-                            "org.springframework.transaction.annotation.Propagation");
+                    if ("REQUIRED".equals(newAssignment)) {
+                        type.addAnnotation("@Transactional",
+                                "org.springframework.transaction.annotation.Transactional");
+                    } else {
+                        type.addAnnotation("@Transactional(propagation = Propagation." + newAssignment + ")",
+                                "org.springframework.transaction.annotation.Transactional",
+                                "org.springframework.transaction.annotation.Propagation");
+                    }
                     type.removeAnnotation(annotation);
                     break;
                 default:
@@ -97,9 +102,14 @@ public class MigrateJeeTransactionsToSpringBootAction extends AbstractAction {
                     String assignment = annotation.getAttribute("value").printAssignment();
                     String newAssignment = mapAssignment(assignment);
                     method.removeAnnotation(annotation);
-                    method.addAnnotation("@Transactional(propagation = Propagation." + newAssignment + ")",
-                            "org.springframework.transaction.annotation.Transactional",
-                            "org.springframework.transaction.annotation.Propagation");
+                    if ("REQUIRED".equals(newAssignment)) {
+                        method.addAnnotation("@Transactional",
+                                "org.springframework.transaction.annotation.Transactional");
+                    } else {
+                        method.addAnnotation("@Transactional(propagation = Propagation." + newAssignment + ")",
+                                "org.springframework.transaction.annotation.Transactional",
+                                "org.springframework.transaction.annotation.Propagation");
+                    }
                     break;
                 default:
             }

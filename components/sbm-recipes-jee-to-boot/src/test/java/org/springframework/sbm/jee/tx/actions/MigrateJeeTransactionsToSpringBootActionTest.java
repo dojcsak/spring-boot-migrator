@@ -66,7 +66,7 @@ class MigrateJeeTransactionsToSpringBootActionTest {
                         "    @Transactional(propagation = Propagation.REQUIRES_NEW)\n" +
                         "    public void requiresNew() {}\n" +
                         "\n" +
-                        "    @Transactional(propagation = Propagation.REQUIRED)\n" +
+                        "    @Transactional\n" +
                         "    public void required() {}\n" +
                         "\n" +
                         "    @Transactional(propagation = Propagation.NEVER)\n" +
