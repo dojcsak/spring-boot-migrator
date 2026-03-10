@@ -75,6 +75,7 @@ public class MigratePersistenceXmlToApplicationPropertiesAction extends Abstract
 
     @Override
     public boolean isApplicable(ProjectContext context) {
-        return context.search(new PersistenceXmlResourceFilter("**/src/main/resources/**")).isPresent();
+        return context.getApplicationModules().stream()
+                .anyMatch(m -> m.search(new PersistenceXmlResourceFilter("**/src/main/resources/**")).isPresent());
     }
 }
