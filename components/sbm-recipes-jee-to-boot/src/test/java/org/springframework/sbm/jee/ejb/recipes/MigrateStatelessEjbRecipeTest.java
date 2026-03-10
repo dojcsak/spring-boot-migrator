@@ -90,7 +90,7 @@ public class MigrateStatelessEjbRecipeTest {
             AddDependencies addDependencies = getAction(recipe, AddDependencies.class);
             assertThat(addDependencies.getDependencies()).containsExactly(Dependency.builder().groupId("org.springframework.boot").artifactId("spring-boot-starter-data-jpa").version("managed").build());
             NoDependencyExistMatchingRegex noDependencyExistMatchingRegex = getConditionFor(addDependencies, NoDependencyExistMatchingRegex.class);
-            assertThat(noDependencyExistMatchingRegex.getDependencies()).containsExactly("org.springframework.boot:spring-boot-starter-data-jpa");
+            assertThat(noDependencyExistMatchingRegex.getDependencies()).containsExactly("org\\.springframework\\.boot\\:spring-boot-starter-data-jpa\\:.*");
 
             AddTypeAnnotationToTypeAnnotatedWith addTransactionalAnnotationToTypeAnnotatedWith = getAction(recipe, AddTypeAnnotationToTypeAnnotatedWith.class);
             assertThat(addTransactionalAnnotationToTypeAnnotatedWith.getAnnotatedWith()).isEqualTo("org.springframework.stereotype.Service");
