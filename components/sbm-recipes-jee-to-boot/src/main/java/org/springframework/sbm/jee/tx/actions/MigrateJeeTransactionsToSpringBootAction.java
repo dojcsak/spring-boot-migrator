@@ -26,6 +26,7 @@ import org.jetbrains.annotations.NotNull;
 import org.openrewrite.java.tree.J;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class MigrateJeeTransactionsToSpringBootAction extends AbstractAction {
@@ -77,6 +78,11 @@ public class MigrateJeeTransactionsToSpringBootAction extends AbstractAction {
                     type.removeAnnotation(annotation);
                     break;
                 case "javax.ejb.TransactionAttribute":
+                    annotations.stream()
+                            .filter(a -> a.getFullyQualifiedName().equals("org.springframework.transaction.annotation.Transactional"))
+                            .findFirst()
+                            .ifPresent(type::removeAnnotation);
+
                     String assignment = annotation.getAttribute("value").printAssignment();
                     String newAssignment = mapAssignment(assignment);
                     if ("REQUIRED".equals(newAssignment)) {

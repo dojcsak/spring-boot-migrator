@@ -84,6 +84,7 @@
       description: Add @Transactional to @Service as replacement for CMT.
       annotation: org.springframework.transaction.annotation.Transactional
       annotatedWith: org.springframework.stereotype.Service
+      addAnnotationIfExists: false
 
     - type: org.springframework.sbm.jee.jpa.actions.MigrateEclipseLinkToSpringBoot
       condition:
