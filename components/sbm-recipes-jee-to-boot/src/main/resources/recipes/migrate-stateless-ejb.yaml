@@ -1,5 +1,5 @@
 - name: migrate-stateless-ejb
-  description: "Migration of stateless EJB to Spring components."
+  description: "Migration of stateless EJB to Spring components"
   order: 80
   condition:
     description: 'Any class has import starting with javax.ejb.Stateless'
@@ -53,6 +53,7 @@
         - javax\:javaee-api.*
         - javax\.ejb\:javax\.ejb-api\:.*
         - org\.jboss\.spec\.javax\.ejb\:jboss-ejb-api_3.*
+        - com\.oracle\.weblogic\:javax\.javaee-api:.*
       condition:
         type: org.springframework.sbm.common.migration.conditions.TrueCondition
       description: Delete ejb dependencies from build file.
