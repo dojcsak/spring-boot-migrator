@@ -15,4 +15,4 @@
           - javax.ejb.TransactionManagement
           - javax.ejb.TransactionManagementType
       description: |-
-        Removes @TransactionManagement and replaces @TransactionAttribute with @Transactional
+        Removes @TransactionManagement and replaces @TransactionAttribute with @Transactional, or update existing @Transactional if already present
