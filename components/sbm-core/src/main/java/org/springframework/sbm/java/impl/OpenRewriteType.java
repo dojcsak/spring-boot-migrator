@@ -16,6 +16,7 @@
 package org.springframework.sbm.java.impl;
 
 import org.openrewrite.java.*;
+import org.openrewrite.java.format.NormalizeFormat;
 import org.openrewrite.java.format.WrappingAndBraces;
 import org.openrewrite.java.tree.*;
 import org.springframework.sbm.java.api.*;
@@ -139,7 +140,8 @@ public class OpenRewriteType implements Type {
     @Override
     public void removeAnnotation(Annotation annotation) {
         Recipe removeAnnotationRecipe = new GenericOpenRewriteRecipe<>(() -> new RemoveAnnotationVisitor(getClassDeclaration(), annotation.getFullyQualifiedName()))
-                .doNext(new RemoveUnusedImports());
+                .doNext(new RemoveUnusedImports())
+                .doNext(new NormalizeFormat());
         refactoring.refactor(rewriteSourceFileHolder, removeAnnotationRecipe);
     }
 
